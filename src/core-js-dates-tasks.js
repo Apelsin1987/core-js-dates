@@ -32,7 +32,11 @@ function dateToTimestamp(date) {
  * Date(2015, 10, 20, 23, 15, 1) => '23:15:01'
  */
 function getTime(date) {
-  return date.toLocaleTimeString();
+  return new Intl.DateTimeFormat('ru-RU', {
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+  }).format(date);
 }
 
 /**
